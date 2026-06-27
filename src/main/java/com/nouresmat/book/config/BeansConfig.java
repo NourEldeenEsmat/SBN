@@ -54,12 +54,13 @@ public class BeansConfig {
         final CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
         corsConfiguration.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
-        corsConfiguration.setAllowedHeaders(Arrays.asList(
-                ORIGIN,
-                CONTENT_TYPE,
-                ACCEPT,
-                AUTHORIZATION
-        ));
+        // corsConfiguration.setAllowedHeaders(Arrays.asList(
+        //         ORIGIN,
+        //         CONTENT_TYPE,
+        //         ACCEPT,
+        //         AUTHORIZATION
+        // ));
+        corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE", "PUT", "PATCH", "OPTIONS"));
         source.registerCorsConfiguration("/**",corsConfiguration);
         return new CorsFilter(source);
