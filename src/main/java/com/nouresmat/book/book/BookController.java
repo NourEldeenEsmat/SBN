@@ -37,13 +37,13 @@ public class BookController {
         return ResponseEntity.ok(bookService.getAllBooks(page, size, connectedUser));
     }
 
-    @GetMapping("get_books_by_owner/{owner-id}")
+    @GetMapping("get_books_by_owner")
     public ResponseEntity<PageResponse<BookResponse>> getBooksByOwner(
             @RequestParam(name = "page", defaultValue = "0", required = false) int page,
             @RequestParam(name = "size", defaultValue = "10", required = false) int size,
-            @PathVariable("owner-id") int id
+            Authentication connectedUser
     ) {
-        return ResponseEntity.ok(bookService.getBooksByOwner(page, size, id));
+        return ResponseEntity.ok(bookService.getBooksByOwner(page, size, connectedUser));
     }
 
     @GetMapping("borrowed_books")

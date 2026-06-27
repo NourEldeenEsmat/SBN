@@ -62,10 +62,11 @@ public class BookService {
         );
     }
 
-    public PageResponse<BookResponse> getBooksByOwner(int page, int size, int id) {
+    public PageResponse<BookResponse> getBooksByOwner(int page, int size, Authentication connectedUser) {
 
+        User user = ((User) connectedUser.getPrincipal());
         Pageable pageable = PageRequest.of(page, size, Sort.by("createdDate"));
-        User owner = userRepository.findById(id)
+        User owner = userRepository.findById(user.getId())
                 .orElseThrow(() -> new RuntimeException("owner not found"));
 
         Page<Book> books = bookRepository.findAllByOwner(pageable, owner);
