@@ -34,7 +34,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 ),
                 @Server(
                         description = "PROD ENV",
-                        url = "https://nouresmat:2026"
+                        url = "https://sbn-production.up.railway.app"
                 )
         },
         security = {
