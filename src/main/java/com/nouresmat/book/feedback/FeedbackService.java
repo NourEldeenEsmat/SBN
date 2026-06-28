@@ -42,7 +42,7 @@ public class FeedbackService {
         User user = (User) connectedUser.getPrincipal();
         Book book = bookRepository.findById(bookId)
                 .orElseThrow(() -> new EntityNotFoundException("book not found"));
-        Pageable pageable = PageRequest.of(size, page, Sort.by("note").descending());
+        Pageable pageable = PageRequest.of(page, size, Sort.by("note").descending());
         Page<Feedback> feedbacks = feedbackRepo.findByBook(book, pageable);
         List<FeedbackResponse> content = feedbacks.stream()
                 .map(f -> feedbackMapper.toFeedbackResponse(f, user.getId())).toList();

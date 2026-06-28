@@ -23,7 +23,8 @@ public class EmailService {
     private final SpringTemplateEngine templateEngine;
     @Async
     public void SendEmail(String to, String userName, EmailTemplateName emailTemplateName,
-                          String conformationUrl, String activationCode, String subject) throws MessagingException {
+                          String conformationUrl, String activationCode,
+                          String subject) throws MessagingException {
         String templateName;
         if (emailTemplateName == null) {
             templateName = "confirm-email";
