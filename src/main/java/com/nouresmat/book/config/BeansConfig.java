@@ -53,8 +53,10 @@ public class BeansConfig {
                 new UrlBasedCorsConfigurationSource();
         final CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
-        corsConfiguration.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
-        corsConfiguration.setAllowedOrigins(Collections.singletonList("https://noureldeenesmat.github.io/Online-Library/"));
+        corsConfiguration.setAllowedOrigins(Arrays.asList(
+                "http://localhost:4200",
+                "https://noureldeenesmat.github.io/Online-Library"
+        ));
         corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE", "PUT", "PATCH", "OPTIONS"));
         source.registerCorsConfiguration("/**",corsConfiguration);
