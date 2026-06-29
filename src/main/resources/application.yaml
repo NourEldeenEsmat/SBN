@@ -1,8 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/bsn_db
-    username: root
-    password: racefour5
+    url: mysql://root:WXqniIGKiNJgumulLrxffPlyMJeKLKKj@mysql.railway.internal:3306/railway
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
