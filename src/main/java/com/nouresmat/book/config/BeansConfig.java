@@ -55,7 +55,7 @@ public class BeansConfig {
         corsConfiguration.setAllowCredentials(true);
         corsConfiguration.setAllowedOrigins(Arrays.asList(
                 "http://localhost:4200",
-                "https://noureldeenesmat.github.io/Online-Library"
+                "https://noureldeenesmat.github.io/book-social-network"
         ));
         corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE", "PUT", "PATCH", "OPTIONS"));
